@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">Description:</label>
-                    <textarea class="form-control" maxlength="140" name="description" required></textarea>
+                    <textarea class="form-control" maxlength="1000" name="description" required></textarea>
                 </div>
                 <div class="form-group">
                     <label class="checkbox-inline">

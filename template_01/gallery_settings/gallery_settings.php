@@ -38,8 +38,11 @@
         <?php }} ?>
         <div class="row" id="panel_container">
             <?php
-            include ("newgalleryitem.php")
-            //include ("managegalleryitems.php")
+            if (isset($_GET['t'])!=1){
+                include ("newgalleryitem.php");
+            }else{
+                include ("managegalleryitems.php");
+            }
             ?>
         </div>
     </div>
@@ -69,6 +72,42 @@
         };
         xhttp.open("POST", "managegalleryitems.php", true);
         xhttp.send();
+    }
+
+    function publish(x) {
+        var chk = document.getElementById("chk_"+x);
+        var d = 0;
+        if (chk.checked){
+            d = 1;
+        }
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText !="success"){
+                    chk.checked = !chk.checked;
+                    alert("Failed to set value : " +  this.responseText );
+                }
+            }
+        };
+        xhttp.open("POST", "modify_settings.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("code=publish&id="+x+"&value="+d);
+    }
+
+    function drop(x) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText !="success"){
+                    alert("Failed to set value : "  +  this.responseText );
+                }else{
+                    page2();
+                }
+            }
+        };
+        xhttp.open("POST", "modify_settings.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("code=drop&id="+x);
     }
 
 
