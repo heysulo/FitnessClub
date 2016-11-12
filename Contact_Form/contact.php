@@ -3,11 +3,14 @@ $servername = "localhost";
 $username = "heshan";
 $password = "eradb";
 $dbname = "gym";
+
+
 if(isset($_POST['clear'])) 
 { 
     header("Location: contactForm.html");
     
 } else {
+
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
@@ -56,6 +59,7 @@ if(isset($_POST['clear']))
         } else {
             $workout_plan = false;
         }
+
         
         
         
@@ -74,8 +78,8 @@ if(isset($_POST['clear']))
             
             if ( ($conn->query($sql) === TRUE) and ($conn->query($sql2) === TRUE) ) 
             {
-                header("Location: contactForm.html");
-                //echo "New record created successfully";
+                echo $_POST["name"].",<br> Your message successfully submitted!";
+                
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }                
@@ -84,19 +88,19 @@ if(isset($_POST['clear']))
             
             if ($conn->query($sql) === TRUE) 
             {
-                //echo "New record created successfully";
-                //header("Location: contactForm.html");
-                echo $workout_plan;
+                echo $_POST["name"].",<br> Your message successfully submitted!";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             } 
         }
     } else {
         
-        header("Location: contactForm.html");
-        
+        //header("Location: contactForm.html");
+        echo "PLEASE FILL A VALID EMAIL AND THE MESSAGE!";
+            
     }
     
     $conn->close(); 
 }
+
 ?>
