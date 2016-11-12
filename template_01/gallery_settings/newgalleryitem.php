@@ -6,14 +6,14 @@
             <div class="col-lg-4">
                 <div style="position: absolute;top: 10px;left: 30px;color: red">
                     Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload" required>
+                    <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg" required>
                 </div>
                 <img class="img-thumbnail" src="http://www.w3schools.com/bootstrap/paris.jpg" style="background-color: #c3c3c3;width: 100%;height: 250px;">
             </div>
             <div class="col-lg-8">
                 <div class="form-group">
                     <label for="usr">Title:</label>
-                    <input type="text" class="form-control" name="title" required>
+                    <input type="text" class="form-control" maxlength="120" name="title" required>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Description:</label>
