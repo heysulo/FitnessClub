@@ -39,36 +39,37 @@
 
                 </div>
 
+                <form action="../PHP/registration.php" method="post" id="pm-contact-form">
                 <div class="row">
 
-                    <form action="#" method="post" id="pm-contact-form">
+                    
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <input name="name" id="pm_s_first_name" class="pm-form-textfield" type="text" placeholder="Name *" required>
                         </div>
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <input name="pm_s_last_name" id="pm_s_last_name" class="pm-form-textfield" type="text" placeholder="Address *" required>
+                            <input name="address" id="pm_s_last_name" class="pm-form-textfield" type="text" placeholder="Address *" required>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <input name="pm_s_email_address" id="pm_s_email_address" class="pm-form-textfield" type="text" placeholder="BIRTH DAY *    (YYYY/MM/DD)  " required>
+                            <input name="bday" id="pm_s_email_address" class="pm-form-textfield" type="text" placeholder="BIRTH DAY *    (YYYY/MM/DD)  " required>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <input name="pm_s_phone_number" class="pm-form-textfield" type="text" placeholder="NIC ">
+                            <input name="nic" class="pm-form-textfield" type="text" placeholder="NIC ">
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <input name="pm_s_email_address" id="pm_s_email_address" class="pm-form-textfield" type="text" placeholder="PHONE NUMBER *" required>
+                            <input name="phone" id="pm_s_email_address" class="pm-form-textfield" type="text" placeholder="PHONE NUMBER *" required>
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <input name="pm_s_phone_number" class="pm-form-textfield" type="email" placeholder="EMAIL * " required>
+                            <input name="email" class="pm-form-textfield" type="email" placeholder="EMAIL * " required>
                         </div>
 
                         <div class="col-lg-4 col-md-4 col-sm-4">
-                            <input name="pm_s_phone_number" class="pm-form-textfield" type="text" placeholder="GENDER *    (MALE/FEMALE) " required>
+                            <input name="gender" class="pm-form-textfield" type="text" placeholder="GENDER *    (MALE/FEMALE) " required>
                         </div>
                     </form>
                 </div>
@@ -112,15 +113,15 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <input name="pm_s_email_address" id="pm_s_email_address" class="pm-form-textfield" type="password" placeholder="PASSWORD * " required>
+                        <input name="password" id="pm_s_email_address" class="pm-form-textfield" type="password" placeholder="PASSWORD * " required>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <input name="pm_s_phone_number" class="pm-form-textfield" type="password" placeholder="RE ENTER PASSWORD * ">
+                        <input name="re_password" class="pm-form-textfield" type="password" placeholder="RE ENTER PASSWORD * ">
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 pm-center">
-                        <input type="button" value="Register" name="pm-form-submit-btn" class="pm-form-submit-btn" id="pm-contact-form-btn">
+                        <input type="submit" value="Register" name="pm-form-submit-btn" class="pm-form-submit-btn" id="pm-contact-form-btn">
                         <div id="pm-contact-form-response"></div>
                         <p class="pm-required">Fields marked with * are required</p>
                     </div>
@@ -128,6 +129,8 @@
                     <input type="hidden" name="pm_s_email_address_contact" value="info@pulsarmedia.ca" />
 
                 </div>
+
+                </form>
         </div>
 
     </body>
